@@ -116,15 +116,22 @@ button {
     display: flex;
     position: relative;    
     padding: 20px 0;
+    width: 100%;
+    overflow: hidden;
+    max-width: 400px;
+}
+
+.slider div {
+    display: flex;
     gap: 25px;
-    animation: 5s slide infinite linear;
+    animation: 15s slide infinite linear;
 }
 
 .slider::before, .slider::after {
     content: '';
     position: absolute;
     z-index: 10;
-    width: 50px;
+    width: 90px;
     height: 100%;
     background: black;
     top: 0;
@@ -132,12 +139,12 @@ button {
 
 .slider::before {
     left: 0;
-    background: linear-gradient(to right, #0C0C0C,  0%, #0c0c0c00 100%);
+    background: linear-gradient(90deg, rgba(12,12,12,1) 0%, rgba(12,12,12,0) 100%);;
 }
 
 .slider::after {
     right: 0;
-    background: linear-gradient(to left, #0C0C0C,  0%, #0c0c0c00 100%);
+    background: linear-gradient(270deg, rgba(12,12,12,1) 0%, rgba(12,12,12,0) 100%);;
 }
 
 .op {
@@ -149,6 +156,6 @@ button {
         
     }
     100% {
-        transform: translateX(-50%);
+        transform: translateX(calc(-50% - 12px));
     }
 }
