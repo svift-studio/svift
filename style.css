@@ -4,18 +4,151 @@
     --white-10: rgba(255, 255, 255, 0.1);
     --white-20: rgba(255, 255, 255, 0.2);
     --white-60: rgba(255, 255, 255, 0.6); 
-    --primary-100: #0A84FF; 
+    --primary-100: #E7EB28; 
 }
 
 * {
     padding: 0;
     margin: 0;
     text-decoration: none;
-    font-family: "Inter", sans-serif;
+    font-family: "Inter", serif;
     color: white;
     box-sizing: border-box;
 }
 
-body{
-    background-color: #0C0C0C;
+body {
+    background: #0C0C0C;
+}
+
+nav {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    opacity: .6;
+    padding: 1em;
+    border-bottom: 1px solid var(--white-10);
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: -4%;
+    line-height: 104.4%;
+}
+
+p {
+    opacity: .6;
+    font-weight: 400;
+}
+
+button {
+    padding: 16px 24px;
+    background: var(--primary-100);
+    border: 1px solid var(--white-10);
+    border-radius: 1000px;
+    color: #000;
+    font-size: 12.8px;
+    font-weight: 500;
+    line-height: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    
+}
+
+.nav-item {
+    display: flex;
+    font-size: 12.8px;
+    align-items: center;
+    gap: 1em;
+    font-weight: 400;
+    letter-spacing: -4%;
+    line-height: 104.8%;
+}
+
+.time {
+    width: 52px;
+}
+
+.dot {
+    height: 9px;
+    width: 9px;
+    background: #05FF00;
+    border-radius: 50%;
+}
+
+.hero {
+    overflow-x: hidden;
+    height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--white-10);
+    align-items: start;
+}
+
+.content {
+    margin-top: 46.1px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 20px;
+
+}
+
+.hero p {
+    margin-right: 27px;
+}
+
+.cta {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 12px;
+}
+
+.cta p {
+    font-size: 10.24px;
+    font-weight: 400;
+}
+
+.slider {
+    display: flex;
+    position: relative;    
+    padding: 20px 0;
+    gap: 25px;
+    animation: 5s slide infinite linear;
+}
+
+.slider::before, .slider::after {
+    content: '';
+    position: absolute;
+    z-index: 10;
+    width: 50px;
+    height: 100%;
+    background: black;
+    top: 0;
+}
+
+.slider::before {
+    left: 0;
+    background: linear-gradient(to right, #0C0C0C,  0%, #0c0c0c00 100%);
+}
+
+.slider::after {
+    right: 0;
+    background: linear-gradient(to left, #0C0C0C,  0%, #0c0c0c00 100%);
+}
+
+.op {
+    opacity: .5;
+}
+
+@keyframes slide {
+    0% {
+        
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
