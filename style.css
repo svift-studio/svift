@@ -11,7 +11,7 @@
     padding: 0;
     margin: 0;
     text-decoration: none;
-    font-family: "Inter", serif;
+    font-family: "Inter", sans-serif;
     color: white;
     box-sizing: border-box;
 }
@@ -35,11 +35,15 @@ h1 {
     font-weight: 400;
     letter-spacing: -4%;
     line-height: 104.4%;
+    transition-duration: 100ms;
+
 }
 
 p {
     opacity: .6;
     font-weight: 400;
+    transition-duration: 100ms;
+
 }
 
 button {
@@ -75,6 +79,7 @@ button {
     width: 9px;
     background: #05FF00;
     border-radius: 50%;
+    animation: 3s blink infinite linear;
 }
 
 .hero {
@@ -93,7 +98,6 @@ button {
     flex-direction: column;
     gap: 24px;
     padding: 32px 20px;
-
 }
 
 .hero p {
@@ -116,15 +120,22 @@ button {
     display: flex;
     position: relative;    
     padding: 20px 0;
+    width: 100%;
+    overflow: hidden;
+    max-width: 400px;
+}
+
+.slider div {
+    display: flex;
     gap: 25px;
-    animation: 5s slide infinite linear;
+    animation: 15s slide infinite linear;
 }
 
 .slider::before, .slider::after {
     content: '';
     position: absolute;
     z-index: 10;
-    width: 50px;
+    width: 90px;
     height: 100%;
     background: black;
     top: 0;
@@ -132,12 +143,12 @@ button {
 
 .slider::before {
     left: 0;
-    background: linear-gradient(to right, #0C0C0C,  0%, #0c0c0c00 100%);
+    background: linear-gradient(90deg, rgba(12,12,12,1) 0%, rgba(12,12,12,0) 100%);;
 }
 
 .slider::after {
     right: 0;
-    background: linear-gradient(to left, #0C0C0C,  0%, #0c0c0c00 100%);
+    background: linear-gradient(270deg, rgba(12,12,12,1) 0%, rgba(12,12,12,0) 100%);;
 }
 
 .op {
@@ -149,6 +160,12 @@ button {
         
     }
     100% {
-        transform: translateX(-50%);
+        transform: translateX(calc(-50% - 12px));
+    }
+}
+
+@keyframes blink {
+    50% {
+        opacity: .3;
     }
 }
