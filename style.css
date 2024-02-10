@@ -28,7 +28,6 @@ nav {
     opacity: .6;
     padding: 1em;
     border-bottom: 1px solid var(--white-10);
-    transition-duration: 100ms;
 }
 
 h1 {
@@ -36,11 +35,15 @@ h1 {
     font-weight: 400;
     letter-spacing: -4%;
     line-height: 104.4%;
+    transition-duration: 100ms;
+
 }
 
 p {
     opacity: .6;
     font-weight: 400;
+    transition-duration: 100ms;
+
 }
 
 button {
@@ -95,7 +98,6 @@ button {
     flex-direction: column;
     gap: 24px;
     padding: 32px 20px;
-    transition-duration: 100ms;
 }
 
 .hero p {
