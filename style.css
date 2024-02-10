@@ -4,7 +4,10 @@
     --white-10: rgba(255, 255, 255, 0.1);
     --white-20: rgba(255, 255, 255, 0.2);
     --white-60: rgba(255, 255, 255, 0.6); 
-    --primary-100: #E7EB28; 
+    --primary-100: #E7EB28;
+
+    --modal-padding-x: 20px;
+    --modal-padding-y: 20px;
 }
 
 * {
@@ -27,6 +30,7 @@ nav {
     width: 100%;
     opacity: .6;
     padding: 1em;
+    z-index: 4;
     border-bottom: 1px solid var(--white-10);
 }
 
@@ -51,13 +55,20 @@ button {
     background: var(--primary-100);
     border: 1px solid var(--white-10);
     border-radius: 1000px;
-    color: #000;
+    color: #121212;
     font-size: 12.8px;
     font-weight: 500;
     line-height: 16px;
     text-transform: uppercase;
     text-align: center;
     
+}
+
+input {
+    border-radius: 1000px;
+    padding: 16px 24px;
+    border: 1px solid var(--white-10);
+    color: #121212;
 }
 
 .nav-item {
@@ -80,6 +91,7 @@ button {
     background: #05FF00;
     border-radius: 50%;
     animation: 3s blink infinite linear;
+    margin-bottom: 1.7px;
 }
 
 .hero {
@@ -153,6 +165,92 @@ button {
 
 .op {
     opacity: .5;
+}
+
+#modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 1em;
+    z-index: 3;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 250ms;
+}
+
+.modal-box {
+    position: relative;
+    width: 300px;
+    background: #161616;
+    border-radius: 12px;
+    border: 1px solid var(--white-10);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 42;
+    flex-direction: column;
+}
+
+.modal-close {
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.modal-previous {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--primary-100);
+    color: var(--primary-100);
+}
+
+.modal-btns {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 var(--modal-padding-x);
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    padding: var(--modal-padding-y) 0;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.modal-content p {
+    padding: 0 var(--modal-padding-x);
+}
+
+.modal-pages {
+    display: flex;
+    transition-duration: 250ms;
+    width: 200%;
+    margin: 20px 0 12px 0;
+}
+
+
+.modal-page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 var(--modal-padding-x);
+}
+
+.modal-page input {
+    width: 100%;
 }
 
 @keyframes slide {
