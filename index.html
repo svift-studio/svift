@@ -46,12 +46,13 @@
             <div class="modal-box">
                 <div class="modal-content">
                     <p>We’ll do a free audit of your website so you can see how your website is performing</p>
+                    <span class="error"></span>
                     <div class="modal-pages">
-                        <div class="modal-page website">
-                            <input type="text" placeholder="example.com">
+                        <div class="modal-page">
+                            <input id="modal-input" class="website" type="text" placeholder="example.com" required>
                         </div>
-                        <div class="modal-page website">
-                            <input type="text" placeholder="example@gmail.com">
+                        <div class="modal-page">
+                            <input id="modal-input" class="email" type="email" placeholder="example@gmail.com" required>
                         </div>
                     </div>
                     <div class="modal-btns">
