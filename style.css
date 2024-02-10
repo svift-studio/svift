@@ -11,7 +11,7 @@
     padding: 0;
     margin: 0;
     text-decoration: none;
-    font-family: "Inter", serif;
+    font-family: "Inter", sans-serif;
     color: white;
     box-sizing: border-box;
 }
@@ -75,6 +75,7 @@ button {
     width: 9px;
     background: #05FF00;
     border-radius: 50%;
+    animation: 3s blink infinite linear;
 }
 
 .hero {
@@ -157,5 +158,11 @@ button {
     }
     100% {
         transform: translateX(calc(-50% - 12px));
+    }
+}
+
+@keyframes blink {
+    50% {
+        opacity: .3;
     }
 }
