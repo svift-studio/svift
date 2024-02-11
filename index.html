@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <script src="main.js" defer></script>
+    <script src="modal.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript>
         <link rel="stylesheet" href="style.css" />
     </noscript>
+    <link rel="stylesheet" href="modal.css" />
     <title>Svift</title>
 </head>
 <body>
@@ -22,11 +27,12 @@
                 <h1>Web design and development for <span class="op">forward-thinking</span> companies.</h1>
             <p>We are a team of two nerds with a passion for clean design and code.</p>
             <div class="cta">
-                <button id="modal-btn">FREE WEBSITE AUDIT</button>
+                <a href="calculator.html"><button class="inverted">Pricing Calculator</button></a>
+                <button id="modal-btn">Free Website Audit</button>
                 <p>This is why you should audit your website.</p>
             </div>
             </div>
-            <div class="slider">
+            <div class="logo-slider">
                 <div>
                     <img src="media/gumroad.svg" alt="">
                     <img src="media/spacex.svg" alt="">

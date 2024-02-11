@@ -1,10 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-
 :root {
     --white-10: rgba(255, 255, 255, 0.1);
     --white-20: rgba(255, 255, 255, 0.2);
     --white-60: rgba(255, 255, 255, 0.6); 
-    --primary-100: #E7EB28;
+    --primary-100: #F8BF2D; /* #E7EB28 */
 
     --modal-padding-x: 20px;
     --modal-padding-y: 20px;
@@ -15,7 +13,7 @@
     margin: 0;
     text-decoration: none;
     font-family: "Inter", sans-serif;
-    color: white;
+    color: #eee;
     box-sizing: border-box;
 }
 
@@ -24,6 +22,7 @@ body {
 }
 
 nav {
+    top: 0;
     position: absolute;
     display: flex;
     justify-content: space-between;
@@ -35,40 +34,61 @@ nav {
 }
 
 h1 {
-    font-size: 40px;
-    font-weight: 400;
+    font-size: 48.83px;
+    font-weight: 500;
     letter-spacing: -4%;
-    line-height: 104.4%;
+    line-height: 52px;
     transition-duration: 100ms;
+}
 
+h2 {
+    font-size: 31.25px;
+    font-weight: 500;
+    color: #f1f1f1;
+    letter-spacing: -1px;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 400;
 }
 
 p {
-    opacity: .6;
     font-weight: 400;
     transition-duration: 100ms;
-
+    font-size: 12.8px;
 }
 
 button {
     padding: 16px 24px;
     background: var(--primary-100);
-    border: 1px solid var(--white-10);
+    border: none;;
     border-radius: 1000px;
-    color: #121212;
-    font-size: 12.8px;
-    font-weight: 500;
+    color: #f1f1f1;
+    font-size: 16px;
+    font-weight: 400;
     line-height: 16px;
-    text-transform: uppercase;
     text-align: center;
-    
+    background: #242424;
 }
 
-input {
+button.inverted {
+    color: #242424;
+    background: var(--primary-100);
+}
+
+input[type=text] {
     border-radius: 1000px;
     padding: 16px 24px;
     border: 1px solid var(--white-10);
     color: #121212;
+}
+
+
+.divider {
+    width: 100%;
+    background: var(--white-10);
+    height: 1px;
 }
 
 .nav-item {
@@ -128,7 +148,7 @@ input {
     font-weight: 400;
 }
 
-.slider {
+.logo-slider {
     display: flex;
     position: relative;    
     padding: 20px 0;
@@ -137,13 +157,13 @@ input {
     max-width: 400px;
 }
 
-.slider div {
+.logo-slider div {
     display: flex;
     gap: 25px;
     animation: 15s slide infinite linear;
 }
 
-.slider::before, .slider::after {
+.logo-slider::before, .logo-slider::after {
     content: '';
     position: absolute;
     z-index: 10;
@@ -153,12 +173,12 @@ input {
     top: 0;
 }
 
-.slider::before {
+.logo-slider::before {
     left: 0;
     background: linear-gradient(90deg, rgba(12,12,12,1) 0%, rgba(12,12,12,0) 100%);;
 }
 
-.slider::after {
+.logo-slider::after {
     right: 0;
     background: linear-gradient(270deg, rgba(12,12,12,1) 0%, rgba(12,12,12,0) 100%);;
 }
@@ -167,99 +187,7 @@ input {
     opacity: .5;
 }
 
-#modal {
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    padding: 1em;
-    z-index: 3;
-    background: rgba(0, 0, 0, 0.8);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    transition-duration: 250ms;
-}
 
-.modal-box {
-    position: relative;
-    width: 300px;
-    background: #161616;
-    border-radius: 12px;
-    border: 1px solid var(--white-10);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    z-index: 42;
-    flex-direction: column;
-}
-
-.modal-close {
-    z-index: -1;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.modal-previous {
-    display: none;
-    background: transparent;
-    border: 1px solid var(--primary-100);
-    color: var(--primary-100);
-}
-
-.modal-btns {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 var(--modal-padding-x);
-}
-
-.modal-content {
-    position: relative;
-    width: 100%;
-    padding: var(--modal-padding-y) 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.modal-content p {
-    padding: 0 var(--modal-padding-x);
-}
-
-.modal-pages {
-    display: flex;
-    transition-duration: 250ms;
-    width: 200%;
-}
-
-
-.modal-page {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0 var(--modal-padding-x);
-}
-
-.modal-page input {
-    width: 100%;
-}
-
-.error {
-    display: none;
-    font-size: 12px;
-    padding: 0 var(--modal-padding-x);
-    color: rgb(255, 144, 53);
-    animation: 150ms wiggle linear;
-}
 
 @keyframes slide {
     0% {

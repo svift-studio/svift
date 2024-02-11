@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="main.js" defer></script>
+    <script src="calculator.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet" href="style.css" />
+    </noscript>
+    <link rel="stylesheet" href="calculator.css" />
+    <title>Svift</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-item"><p>Svift</p></div>
+        <div class="nav-item"><p>GMT+1</p><p class="time">00:00:00</p><div class="dot"></div></div>
+    </nav>
+    <main>            
+        <section>
+            <div class="calculator">
+                <!--<a href="index.html">Home</a>-->
+                <div class="calculator-header">
+                    <h1>Website Price Calculator</h1>
+                    <h3>This calculator gives an illustrated idea of what your website could cost.</h3>
+                </div>
+                <div class="divider"></div>
+                <div class="calculator-content">
+                    <div class="checkboxes">
+                        <div class="checkboxes-header">
+                            <p>Choose one or multiple</p>
+                        </div>
+                        <div class="checkboxes-content">
+                            <div class="checkbox-item active" id="website">Website</div>
+                            <div class="checkbox-item active" id="maintenance">Maintenance & Hosting</div>
+                            <div class="checkbox-item" id="marketing">Marketing</div>
+                        </div>
+                    </div>
+                    <div class="pages">
+                        <div class="pages-header">
+                            <p>Pages</p>
+                            <h3 class="page-number"></h3>
+                        </div>
+                        <input type="range" min="1" max="5" value="3" class="pages-slider">
+                    </div>
+                    <div class="estimates">
+                        <div class="estimate-price">
+                            <p>Estimated price</p>
+                            <h2>NOK <span class="price-once"></span></h2>
+                            <p>+ NOK <span class="price-monthly"></span> / month</p>
+                        </div>
+                        <div class="estimate-delivery">
+                            <p>Estimated delivery</p>
+                            <h2><span class="delivery"></span> Days</h2>
+                        </div>
+                    </div>
+                    <div class="included">
+                        <div class="included-btn">See what's included +</div>
+                        <div class="included-header">
+                            <div class="included-website">
+                                <p>Website</p>
+                                <div class="included-content">
+                                </div>
+                            </div>
+                            <div class="included-maintenance">
+                                <p>Maintenance & Hosting</p>
+                                <div class="included-content">
+                                </div>
+                            </div>
+                            <div class="included-marketing">
+                                <p>Marketing</p>
+                                <div class="included-content">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="calculator-btns">
+                    <div>
+                        <button>Buy now</button>
+                        <button class="inverted">Get quote</button>
+                    </div>
+                    
+                    <button>Get a free audit of your website</button>
+                </div>
+            </div>
+        </section>
+        
+
+    </main>
+</body>
+</html>

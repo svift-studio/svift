@@ -1,0 +1,140 @@
+.calculator {
+    padding: 68px 16px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.calculator-header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.calculator-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.checkboxes-content {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.checkbox-item {
+    border-radius: 4px;
+    padding: 16px;
+    color: #e1e1e1;
+    background: #242424;
+    font-size: 12.8px;
+}
+
+.checkbox-item.active {
+    background: var(--primary-100);
+    color: #0f0f0f 
+}
+
+.pages {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.pages-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.estimates {
+    display: flex;
+    justify-content: space-between;
+}
+
+.estimate-price h2, .estimate-delivery h2 {
+    margin: 4px 0;
+    color: var(--primary-100)
+}
+
+.price-once, .estimate-delivery span {
+    color: var(--primary-100)
+}
+
+.included {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 16px
+}
+
+.included-btn {
+    font-size: 12.8px;
+    padding: 8px 12px;
+    border: 1px solid #CCC;
+    border-radius: 28px;
+    cursor: pointer;
+}
+.included-btn.active {
+    background: var(--primary-100);
+    color: #0f0f0f;
+    border: none;
+}
+
+.included-header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow: hidden;
+    transition-duration: 250ms;
+    height: 0%;
+    max-height: 0px;
+}
+
+.included-header.active {
+    max-height: 1000px;
+}
+
+.included-header>div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.included-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.included-item {
+    padding: 4px 8px;
+    font-size: 12.8px;
+    border: 1px solid #5F5F5F;
+    border-radius: 28px;
+    color: #5F5F5F;
+    transition-duration: 150ms;
+}
+
+.calculator-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.calculator-btns>div {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+}
+
+.calculator-btns>div>button {
+    width: 100%;
+}
