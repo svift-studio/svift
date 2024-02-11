@@ -1,0 +1,47 @@
+input[type="range"] {
+    --c: var(--primary-100); /* active color */
+    --g: 0px; /* the gap */
+    --l: 4px; /* line thickness */
+    --s: 30px; /* thumb size */
+
+    height: var(--s); /* needed for Firefox*/
+    --_c: color-mix(in srgb, var(--c), var(--primary-100) var(--p,0%));
+    -webkit-appearance :none;
+    -moz-appearance :none;
+    appearance :none;
+    background: none;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 100px;
+}
+
+
+/* chromium */
+input[type="range" i]::-webkit-slider-thumb{
+    height: 12px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    box-shadow: 0 0 0 var(--_b, 2px) inset var(--_c);
+    border-image: linear-gradient(90deg,var(--_c) 50%,#232323 0) 0 1/calc(50% - var(--l)/2) 100vw/0 calc(100vw + var(--g));
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+    height: 12px;
+    width: 12px;
+    background: none;
+    border-radius: 50%;
+    box-shadow: 0 0 0 var(--_b, 2px) inset var(--_c);
+    border-image: linear-gradient(90deg,var(--_c) 50%,#232323 0) 0 1/calc(50% - var(--l)/2) 100vw/0 calc(100vw + var(--g));
+    -moz-appearance: none;
+    appearance: none;
+}
+
+@supports not (color: color-mix(in srgb,red,red)) {
+    input {
+      --_c: var(--c);
+    }
+}

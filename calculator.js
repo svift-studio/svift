@@ -70,7 +70,8 @@ includedItems('website')
 includedItems('maintenance')
 includedItems('marketing')
 function updateCalc() {
-    pages = pagesSlider.value;
+    pages = Math.round(pagesSlider.value/10);
+    pagesSlider.value = pages*10;
     priceOnce = 
         website*(basePriceWebsite+(costPerPageWebsite*pages)); 
     priceMonthly = 
