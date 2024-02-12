@@ -164,10 +164,19 @@
         width: 50%;
         height: calc(100svh - 48px);
         
-        background: var(--primary-100);
+        background: var(--bg-secondary);
     }
 
     .calculator {
         width: 50%;
     }
+}
+
+@media only screen and (min-width: 1300px) {
+    .calculator-btns {
+        width: 50%;
+        right: 0;
+        left: auto;
+    }
+
 }
