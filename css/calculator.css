@@ -1,6 +1,5 @@
 .calculator-container {
     display: flex;
-    gap: 16px;
     padding-top: 48px;
     position: relative;
 }
@@ -148,6 +147,10 @@
 }
 
 @media only screen and (min-width: 700px) {
+    .calculator-container {
+        gap: 16px;
+    }
+
     .calculator-image {
         width: 50%;
         height: calc(100svh - 48px);

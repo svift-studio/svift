@@ -35,7 +35,7 @@ const marketingIncluded = [
 "Site Speed Optimization"
 ];
 
-const animationSpeed = 0; // in ms
+const animationSpeed = 50; // in ms
 
 const websiteContent = document.querySelector('.included-website .included-content');
 const maintenanceContent = document.querySelector('.included-maintenance .included-content');
@@ -118,8 +118,6 @@ includedBtn.addEventListener('click', () => {
     }
     includedBtn.classList.toggle('active')
 })
-
-
 
 function includedItems(element) {
     switch (element) {
