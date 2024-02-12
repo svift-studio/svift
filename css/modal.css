@@ -17,9 +17,9 @@
 .modal-box {
     position: relative;
     width: 300px;
-    background: #161616;
+    background: var(--bg-primary);
     border-radius: 12px;
-    border: 1px solid var(--white-10);
+    border: 1px solid var(--divider);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,9 +39,6 @@
 
 .modal-previous {
     display: none;
-    background: transparent;
-    border: 1px solid var(--primary-100);
-    color: var(--primary-100);
 }
 
 .modal-btns {
@@ -88,7 +85,7 @@
     display: none;
     font-size: 12px;
     padding: 0 var(--modal-padding-x);
-    color: rgb(255, 144, 53);
+    color: var(--accent-secondary);
     animation: 150ms wiggle linear;
 }
 

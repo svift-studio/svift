@@ -1,12 +1,11 @@
 
-
 .hero {
     overflow-x: hidden;
     height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-bottom: 1px solid var(--white-10);
+    border-bottom: 1px solid var(--divider);
     align-items: start;
 }
 
@@ -29,11 +28,6 @@
     gap: 12px;
 }
 
-.cta p {
-    font-size: 10.24px;
-    font-weight: 400;
-}
-
 .logo-slider {
     display: flex;
     position: relative;    
@@ -52,28 +46,26 @@
 .logo-slider::before, .logo-slider::after {
     content: '';
     position: absolute;
-    z-index: 10;
-    width: 90px;
+    z-index: 3;
+    width: 80px;
     height: 100%;
-    background: black;
+    background: var(--bg-primary);
     top: 0;
 }
 
 .logo-slider::before {
     left: 0;
-    background: linear-gradient(90deg, rgba(12,12,12,1) 0%, rgba(12,12,12,0) 100%);;
+    background: linear-gradient(90deg, rgba(15,15,15,1) 0%, rgba(15,15,15,0) 100%);
 }
 
 .logo-slider::after {
     right: 0;
-    background: linear-gradient(270deg, rgba(12,12,12,1) 0%, rgba(12,12,12,0) 100%);;
+    background: linear-gradient(270deg, rgba(15,15,15,1) 0%, rgba(15,15,15,0) 100%);
 }
 
 .op {
     opacity: .5;
 }
-
-
 
 @keyframes slide {
     0% {

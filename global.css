@@ -1,8 +1,49 @@
 :root {
-    --white-10: rgba(255, 255, 255, 0.1);
-    --white-20: rgba(255, 255, 255, 0.2);
-    --white-60: rgba(255, 255, 255, 0.6); 
-    --primary-100: #F8BF2D; /* #E7EB28 */
+    /* colors */
+    --primary: #C7CDE3; /* #E7EB28 / #F8BF2D*/
+
+    --bg-primary: #151515;
+    --bg-secondary: #202020;
+    
+    --text-primary: #EEEEEE;
+    --text-secondary: rgb(238, 238, 238, .6);
+    --text-inverted: #111111;
+
+    --accent-primary: #14FB00;
+    --accent-secondary: #FF2222;
+    --divider: rgb(238, 238, 238, .1);
+
+    /* typography */
+    --h1-large: 48.83px;
+    --h1-small: 37px;
+    
+    --h2-large: 31.25px;
+    --h2-small: 26px;
+    
+    --h3-large: 16px;
+    --h3-small: 18px;
+    
+    --h4-large: 16px;
+    --h4-small: 15px;
+
+    --p-large: 15px;
+    --p-small: 15px;
+
+    --c-large: 12px;
+    --c-small: 12px;
+
+    --button-large: 15px;
+    --button-small: 15px;
+
+    --nav-large: 12.8px;
+    --nav-small: 12.8px;
+
+    --a-large: 15px;
+    --a-small: 15px;
+
+    /* misc */
+    --animation-fast: 100ms;
+    --animation-slow: 250ms;
 
     --modal-padding-x: 20px;
     --modal-padding-y: 20px;
@@ -13,87 +54,117 @@
     margin: 0;
     text-decoration: none;
     font-family: "Inter", sans-serif;
-    color: #eee;
+    color: var(--text-primary);
     box-sizing: border-box;
+
 }
 
 body {
-    background: #0C0C0C;
+    background: var(--bg-primary);
 }
 
 nav {
     top: 0;
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: space-between;
     width: 100%;
-    opacity: .6;
     padding: 1em;
     z-index: 4;
-    border-bottom: 1px solid var(--white-10);
+    border-bottom: 1px solid var(--divider);
+    background: var(--bg-primary);
+}
+
+nav * {
+    opacity: 0.8;
 }
 
 h1 {
-    font-size: 48.83px;
+    font-size: var(--h1-small);
     font-weight: 500;
     letter-spacing: -4%;
-    line-height: 52px;
-    transition-duration: 100ms;
+    line-height: 120%;
+    transition-duration: var(--animation-fast);
 }
 
 h2 {
-    font-size: 31.25px;
-    font-weight: 500;
-    color: #f1f1f1;
-    letter-spacing: -1px;
+    font-size: var(--h2-small);
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -4%;
 }
 
 h3 {
-    font-size: 16px;
+    font-size: var(--h3-small);
     font-weight: 400;
+    line-height: 120%;
+}
+
+h4 {
+    font-size: var(--h4-small);
+    font-weight: 500;
 }
 
 p {
     font-weight: 400;
-    transition-duration: 100ms;
-    font-size: 12.8px;
+    line-height: 120%;
+    transition-duration: var(--animation-fast);
+    font-size: var(--p-small);
+}
+
+small {
+    font-size: var(--c-small);
+    line-height: 120%;
 }
 
 button {
-    padding: 16px 24px;
-    background: var(--primary-100);
-    border: none;;
+    padding: 16px 20px;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: none;
     border-radius: 1000px;
-    color: #f1f1f1;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 16px;
+    font-size: var(--button-small);
+    font-weight: 500;
+
     text-align: center;
-    background: #242424;
 }
 
 button.inverted {
-    color: #242424;
-    background: var(--primary-100);
+    color: var(--text-inverted);
+    background: var(--primary);
 }
 
-input[type=text] {
+input[type="text"], input[type="email"] {
     border-radius: 1000px;
     padding: 16px 24px;
-    border: 1px solid var(--white-10);
-    color: #121212;
+    border: 1px solid var(--divider);
+    color: var(--bg-primary);
 }
 
+.pill {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: var(--c-small);
+    font-weight: 400;
+    line-height: 120%;
+    padding: 8px 12px;
+    border-radius: 100px;
+}
 
 .divider {
     width: 100%;
-    background: var(--white-10);
+    background: var(--divider);
     height: 1px;
+}
+
+.logo {
+    font-size: var(--p-small);
+    font-weight: 500;
 }
 
 .nav-item {
     display: flex;
-    font-size: 12.8px;
+    font-size: var(--nav-small);
     align-items: center;
     gap: 1em;
     font-weight: 400;
@@ -102,16 +173,37 @@ input[type=text] {
 }
 
 .time {
-    width: 52px;
+    width: 60px;
 }
 
 .dot {
     height: 9px;
     width: 9px;
-    background: #05FF00;
+    background: var(--accent-primary);
     border-radius: 50%;
     animation: 3s blink infinite linear;
-    margin-bottom: 1.7px;
+    margin-bottom: 1.82px;
+    opacity: 1;
+}
+
+.checkbox-item {
+    border-radius: 100px;
+    padding: 12px 16px;
+    color: var(--text-primary);
+    outline: 1px solid var(--divider);
+    background: transparent;
+    font-size: var(--button-small);
+    font-weight: 500;
+    line-height: 120%;
+    transition-duration: 100ms;
+    outline-offset: -1px;
+}
+
+.checkbox-item.active {
+    /* background: var(--primary);
+    color: var(--text-inverted); */
+    outline: 2px solid var(--primary);
+    outline-offset: -2px;
 }
 
 @keyframes blink {

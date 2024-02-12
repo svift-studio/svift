@@ -1,12 +1,12 @@
 .calculator-container {
     display: flex;
     padding-top: 48px;
-    position: relative;
 }
 
 .calculator {
     padding: 48px 16px 16px 16px;
     display: flex;
+    position: relative;
     flex-direction: column;
     gap: 32px;
     min-height: calc(100svh -48px);
@@ -21,7 +21,7 @@
 .calculator-content {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 20px;
 }
 
 .checkboxes {
@@ -36,23 +36,11 @@
     flex-wrap: wrap;
 }
 
-.checkbox-item {
-    border-radius: 4px;
-    padding: 16px;
-    color: #e1e1e1;
-    background: #242424;
-    font-size: 12.8px;
-}
-
-.checkbox-item.active {
-    background: var(--primary-100);
-    color: #0f0f0f 
-}
-
 .pages {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 8px;
+    
 }
 
 .pages-header {
@@ -68,18 +56,24 @@
 
 .estimate-price h2, .estimate-delivery h2 {
     margin: 4px 0;
-    color: var(--primary-100)
+    color: var(--primary)
 }
 
 .price-once, .estimate-delivery span {
-    color: var(--primary-100)
+    color: var(--primary)
+}
+
+.estimate-delivery {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
 }
 
 .included {
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 16px;
+    gap: 32px;
     margin-bottom: auto;
 }
 
@@ -90,35 +84,44 @@
     border-radius: 28px;
     cursor: pointer;
 }
+
 .included-btn.active {
-    background: var(--primary-100);
-    color: #0f0f0f;
+    background: var(--primary);
+    color: var(--text-inverted);
     border: none;
 }
 
 .included-header {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 32px;
     overflow: hidden;
-    transition-duration: 250ms;
-    max-height: 0px;
+    transition-duration: var(--animation-slow);
+    padding-bottom: 100px;
 }
 
 .included-header.active {
     max-height: 1000px;
 }
 
+.included-header p {
+    opacity: 0;
+    transition-duration: 100ms;
+}
+
 .included-header>div {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 16px;
 }
 
 .included-content {
     display: flex;
     flex-wrap: wrap;
-    gap: 4px;
+    gap: 8px;
+    border-left: 3px solid var(--primary);
+    padding: 0 8px;
+    
 }
 
 .included-item {
@@ -131,19 +134,25 @@
 }
 
 .calculator-btns {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    z-index: 4;
+    width: 100%;
+    background: var(--bg-primary);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 20px 20px;
+    border-top: 1px solid var(--divider)
 }
 
-.calculator-btns>div {
+.calculator-btns div {
+    position: relative;
     display: flex;
-    width: 100%;
-    gap: 8px;
+    justify-content: stretch;
+    gap: 8px
 }
 
-.calculator-btns>div>button {
-    width: 100%;
+.calculator-btns button {
+    width: 50%;
 }
 
 @media only screen and (min-width: 700px) {

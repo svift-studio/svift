@@ -7,18 +7,18 @@
     <script src="/js/calculator.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link rel="preload" href="/global.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript>
         <link rel="stylesheet" href="/global.css" />
     </noscript>
     <link rel="stylesheet" href="/css/calculator.css" />
     <link rel="stylesheet" href="/css/slider.css" />
-    <title>Svift</title>
+    <title>Svift®</title>
 </head>
 <body>
     <nav>
-        <div class="nav-item"><a href="/">SVIFT</a></div>
+        <div class="nav-item"><a href="/" class="logo">Svift®</a></div>
         <div class="nav-item"><p>GMT+1</p><p class="time">00:00:00</p><div class="dot"></div></div>
     </nav>
     <main>            
@@ -27,11 +27,11 @@
             <div class="calculator">
                 <!--<a href="index.html">Home</a>-->
                 <div class="calculator-header">
-                    <h1>Website Price Calculator</h1>
+                    <h1>Website price calculator</h1>
                     <h3>This calculator gives an illustrated idea of what your website could cost.</h3>
                 </div>
-                <div class="divider"></div>
                 <div class="calculator-content">
+                    <div class="divider"></div>
                     <div class="checkboxes">
                         <div class="checkboxes-header">
                             <p>Choose one or multiple</p>
@@ -42,26 +42,29 @@
                             <div class="checkbox-item" id="marketing">Marketing</div>
                         </div>
                     </div>
+                    <div class="divider"></div>
                     <div class="pages">
                         <div class="pages-header">
                             <p>Pages</p>
-                            <h3 class="page-number"></h3>
+                            <p class="page-number"></p>
                         </div>
-                        <input type="range" min="10" max="50" value="30" class="pages-slider">
+                        <input type="range" min="100" max="1000" value="300" class="pages-slider">
                     </div>
+                    <div class="divider"></div>
                     <div class="estimates">
                         <div class="estimate-price">
                             <p>Estimated price</p>
                             <h2>NOK <span class="price-once"></span></h2>
-                            <p>+ NOK <span class="price-monthly"></span> / month</p>
+                            <h4>+ NOK <span class="price-monthly"></span> / month</h4>
                         </div>
                         <div class="estimate-delivery">
                             <p>Estimated delivery</p>
                             <h2><span class="delivery"></span> Days</h2>
                         </div>
                     </div>
+                    <div class="divider"></div>
                     <div class="included">
-                        <div class="included-btn">See what's included +</div>
+                        <!-- <p>What's included</p> -->
                         <div class="included-header">
                             <div class="included-website">
                                 <p>Website</p>
@@ -83,11 +86,10 @@
                 </div>
                 <div class="calculator-btns">
                     <div>
-                        <button>Buy now</button>
-                        <button class="inverted">Get quote</button>
+                        <button>Primary</button>
+                        <button class="inverted">Secondary</button>
                     </div>
-                    
-                    <button>Get a free audit of your website</button>
+                                      
                 </div>
             </div>
         </section>

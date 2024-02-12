@@ -35,14 +35,11 @@ const marketingIncluded = [
 "Site Speed Optimization"
 ];
 
-const animationSpeed = 50; // in ms
+const animationSpeed = 0; // in ms
 
 const websiteContent = document.querySelector('.included-website .included-content');
 const maintenanceContent = document.querySelector('.included-maintenance .included-content');
 const marketingContent = document.querySelector('.included-marketing .included-content');
-
-const includedHeader = document.querySelector('.included-header');
-const includedBtn = document.querySelector('.included-btn');
 
 const calculator = document.querySelector('.calculator');
 const pagesSlider = document.querySelector('.pages-slider');
@@ -81,7 +78,7 @@ includedItems('maintenance')
 includedItems('marketing')
 
 function updateCalc() {
-    pages = Math.round(pagesSlider.value/10);
+    pages = Math.round(pagesSlider.value/100);
     priceOnce = 
         website*(basePriceWebsite+(costPerPageWebsite*pages)); 
     priceMonthly = 
@@ -108,17 +105,6 @@ checkboxes.addEventListener('click', (e) => {
     includedItems(e.target.id)
 })
 
-includedBtn.addEventListener('click', () => {
-    if (includedBtn.classList.contains('active')) {
-        includedBtn.textContent = `See what's included +`;
-        includedHeader.style.maxHeight = '0px'
-    } else {
-        includedBtn.textContent = `Hide what's included -`;
-        includedHeader.style.maxHeight = '600px'
-    }
-    includedBtn.classList.toggle('active')
-})
-
 function includedItems(element) {
     switch (element) {
         case 'website':
@@ -135,10 +121,13 @@ function includedItems(element) {
 
 function addElements(content, container) {
     let timeout = 0;
+    container.parentNode.querySelector('p').style.display = 'flex';
+    container.parentNode.style.display = 'flex';
+    container.parentNode.querySelector('p').style.opacity = '1';
+    
     content.map(element => {
-        console.log('called')
         let newItem = document.createElement('div');
-        newItem.classList.add('included-item')
+        newItem.classList.add('pill')
         newItem.textContent = element;
         setTimeout(() => {
             container.appendChild(newItem);
@@ -149,9 +138,15 @@ function addElements(content, container) {
 
 function removeElements(container) {
     let timeout = 0;
-    container.querySelectorAll('.included-item').forEach(element => {
+    container.parentNode.querySelector('p').style.opacity = '0';
+    setTimeout(() => {
+        container.parentNode.querySelector('p').style.display = 'none';
+        container.parentNode.style.display = 'none';
+    }, 100);
+    
+    container.querySelectorAll('.pill').forEach(element => {
         setTimeout(() => {
-            element.remove()            
+            element.remove();         
         }, timeout);
         timeout+=animationSpeed;
     })
@@ -169,12 +164,12 @@ setInterval(() => {
 pagesSlider.ontouchstart = () => sliderActive = true;
 pagesSlider.ontouchend = () => {
     sliderActive = false;
-    pagesSlider.value = pages*10;
+    pagesSlider.value = pages*100;
 }
 pagesSlider.onmousedown = () => sliderActive = true;
 pagesSlider.onmouseup = () => {
     sliderActive = false;
-    pagesSlider.value = pages*10;
+    pagesSlider.value = pages*100;
 }
 
 pagesSlider.onchange = () => updateCalc();
