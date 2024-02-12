@@ -1,6 +1,6 @@
 :root {
     /* colors */
-    --primary: #C7CDE3; /* #E7EB28 / #F8BF2D*/
+    --primary: #E6D648; /* #E7EB28 / #F8BF2D*/
 
     --bg-primary: #151515;
     --bg-secondary: #202020;
@@ -76,7 +76,7 @@ nav {
 }
 
 nav * {
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 h1 {
@@ -89,7 +89,7 @@ h1 {
 
 h2 {
     font-size: var(--h2-small);
-    font-weight: 600;
+    font-weight: 500;
     line-height: 120%;
     letter-spacing: -4%;
 }
@@ -102,7 +102,7 @@ h3 {
 
 h4 {
     font-size: var(--h4-small);
-    font-weight: 500;
+    font-weight: 400;
 }
 
 p {
@@ -194,7 +194,7 @@ input[type="text"], input[type="email"] {
     outline: 1px solid var(--divider);
     background: transparent;
     font-size: var(--button-small);
-    font-weight: 500;
+    font-weight: 400;
     line-height: 120%;
     transition-duration: 100ms;
     outline-offset: -1px;
@@ -203,7 +203,7 @@ input[type="text"], input[type="email"] {
 .checkbox-item.active {
     /* background: var(--primary);
     color: var(--text-inverted); */
-    outline: 2px solid var(--primary);
+    outline: 1px solid var(--text-primary);
     outline-offset: -2px;
 }
 
