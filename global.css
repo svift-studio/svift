@@ -1,6 +1,6 @@
 :root {
     /* colors */
-    --primary: #E6D648; /* #E7EB28 / #F8BF2D*/
+    --primary: #FFF84C; /* #C7CDE3 #E7EB28 #F8BF2D #E6D648 */
 
     --bg-primary: #151515;
     --bg-secondary: #202020;
@@ -190,7 +190,7 @@ input[type="text"], input[type="email"] {
 .checkbox-item {
     border-radius: 100px;
     padding: 12px 16px;
-    color: var(--text-primary);
+    color: var(--text-secondary);
     outline: 1px solid var(--divider);
     background: transparent;
     font-size: var(--button-small);
@@ -201,10 +201,9 @@ input[type="text"], input[type="email"] {
 }
 
 .checkbox-item.active {
-    /* background: var(--primary);
-    color: var(--text-inverted); */
-    outline: 1px solid var(--text-primary);
+    outline: 2px solid var(--primary);
     outline-offset: -2px;
+    color: var(--text-primary)
 }
 
 @keyframes blink {
