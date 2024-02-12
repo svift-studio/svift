@@ -91,3 +91,21 @@
     color: rgb(255, 144, 53);
     animation: 150ms wiggle linear;
 }
+
+@keyframes wiggle {
+    0% {
+        transform: translateX(0px);
+    }
+    25% {
+        transform: translateX(10px);
+    }
+    50% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}

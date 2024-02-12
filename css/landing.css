@@ -1,0 +1,85 @@
+
+
+.hero {
+    overflow-x: hidden;
+    height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--white-10);
+    align-items: start;
+}
+
+.content {
+    margin-top: 46.1px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 20px;
+}
+
+.hero p {
+    margin-right: 27px;
+}
+
+.cta {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 12px;
+}
+
+.cta p {
+    font-size: 10.24px;
+    font-weight: 400;
+}
+
+.logo-slider {
+    display: flex;
+    position: relative;    
+    padding: 20px 0;
+    width: 100%;
+    overflow: hidden;
+    max-width: 400px;
+}
+
+.logo-slider div {
+    display: flex;
+    gap: 25px;
+    animation: 15s slide infinite linear;
+}
+
+.logo-slider::before, .logo-slider::after {
+    content: '';
+    position: absolute;
+    z-index: 10;
+    width: 90px;
+    height: 100%;
+    background: black;
+    top: 0;
+}
+
+.logo-slider::before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(12,12,12,1) 0%, rgba(12,12,12,0) 100%);;
+}
+
+.logo-slider::after {
+    right: 0;
+    background: linear-gradient(270deg, rgba(12,12,12,1) 0%, rgba(12,12,12,0) 100%);;
+}
+
+.op {
+    opacity: .5;
+}
+
+
+
+@keyframes slide {
+    0% {
+        
+    }
+    100% {
+        transform: translateX(calc(-50% - 12px));
+    }
+}

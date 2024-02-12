@@ -1,4 +1,5 @@
-const websiteIncluded = ["Unique Customized Design",
+const websiteIncluded = [
+"Unique Customized Design",
 "Prototyping & Testing",
 "Target Market Analysis",
 "SEO Implementation",
@@ -7,8 +8,11 @@ const websiteIncluded = ["Unique Customized Design",
 "Cross-Platform Responsive",
 "HTML5, CSS3 & JavaScript",
 "WCAG & ADA Compliant",
-"Satisfaction Guarantee"]
-const maintenanceIncluded = ["Functionality Checks",
+"Satisfaction Guarantee"
+];
+
+const maintenanceIncluded = [
+"Functionality Checks",
 "Dependency Updates",
 "Site Analytics & Customer Data",
 "Uptime Monitoring",
@@ -16,8 +20,11 @@ const maintenanceIncluded = ["Functionality Checks",
 "Priority Bug Fixing",
 "Backup Management",
 "Browser and Device Testing",
-"Site Speed Optimization"]
-const marketingIncluded = ["Functionality Checks",
+"Site Speed Optimization"
+];
+
+const marketingIncluded = [
+"Functionality Checks",
 "Dependency Updates",
 "Site Analytics & Customer Data",
 "Uptime Monitoring",
@@ -25,7 +32,8 @@ const marketingIncluded = ["Functionality Checks",
 "Priority Bug Fixing",
 "Backup Management",
 "Browser and Device Testing",
-"Site Speed Optimization"]
+"Site Speed Optimization"
+];
 
 const animationSpeed = 0; // in ms
 
@@ -33,17 +41,19 @@ const websiteContent = document.querySelector('.included-website .included-conte
 const maintenanceContent = document.querySelector('.included-maintenance .included-content');
 const marketingContent = document.querySelector('.included-marketing .included-content');
 
-const includedHeader = document.querySelector('.included-header')
-const includedBtn = document.querySelector('.included-btn')
+const includedHeader = document.querySelector('.included-header');
+const includedBtn = document.querySelector('.included-btn');
 
-const calculator = document.querySelector('.calculator')
-const pagesSlider = document.querySelector('.pages-slider')
-const priceOnceNode = document.querySelector('.price-once')
-const priceMonthlyNode = document.querySelector('.price-monthly')
-const deliveryNode = document.querySelector('.delivery')
-const pageNumberNode = document.querySelector('.page-number')
-const checkboxes = document.querySelector('.checkboxes-content')
-const checkboxItems = document.querySelectorAll('.checkbox-item')
+const calculator = document.querySelector('.calculator');
+const pagesSlider = document.querySelector('.pages-slider');
+const priceOnceNode = document.querySelector('.price-once');
+const priceMonthlyNode = document.querySelector('.price-monthly');
+const deliveryNode = document.querySelector('.delivery');
+const pageNumberNode = document.querySelector('.page-number');
+const checkboxes = document.querySelector('.checkboxes-content');
+const checkboxItems = document.querySelectorAll('.checkbox-item');
+
+let sliderActive = false;
 
 const basePriceWebsite = 10000;
 const basePriceMaintenance = 500;
@@ -69,9 +79,9 @@ updateCalc()
 includedItems('website')
 includedItems('maintenance')
 includedItems('marketing')
+
 function updateCalc() {
     pages = Math.round(pagesSlider.value/10);
-    pagesSlider.value = pages*10;
     priceOnce = 
         website*(basePriceWebsite+(costPerPageWebsite*pages)); 
     priceMonthly = 
@@ -109,6 +119,8 @@ includedBtn.addEventListener('click', () => {
     includedBtn.classList.toggle('active')
 })
 
+
+
 function includedItems(element) {
     switch (element) {
         case 'website':
@@ -126,6 +138,7 @@ function includedItems(element) {
 function addElements(content, container) {
     let timeout = 0;
     content.map(element => {
+        console.log('called')
         let newItem = document.createElement('div');
         newItem.classList.add('included-item')
         newItem.textContent = element;
@@ -148,6 +161,22 @@ function removeElements(container) {
 
 function addSpace(num) {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
+
+setInterval(() => {
+    if (!sliderActive) return;
+    updateCalc();
+}, 100);
+
+pagesSlider.ontouchstart = () => sliderActive = true;
+pagesSlider.ontouchend = () => {
+    sliderActive = false;
+    pagesSlider.value = pages*10;
+}
+pagesSlider.onmousedown = () => sliderActive = true;
+pagesSlider.onmouseup = () => {
+    sliderActive = false;
+    pagesSlider.value = pages*10;
 }
 
 pagesSlider.onchange = () => updateCalc();

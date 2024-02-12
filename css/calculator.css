@@ -1,8 +1,16 @@
+.calculator-container {
+    display: flex;
+    gap: 16px;
+    padding-top: 48px;
+    position: relative;
+}
+
 .calculator {
-    padding: 68px 16px 16px 16px;
+    padding: 48px 16px 16px 16px;
     display: flex;
     flex-direction: column;
     gap: 32px;
+    min-height: calc(100svh -48px);
 }
 
 .calculator-header {
@@ -72,7 +80,8 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 16px
+    gap: 16px;
+    margin-bottom: auto;
 }
 
 .included-btn {
@@ -94,7 +103,6 @@
     gap: 16px;
     overflow: hidden;
     transition-duration: 250ms;
-    height: 0%;
     max-height: 0px;
 }
 
@@ -137,4 +145,17 @@
 
 .calculator-btns>div>button {
     width: 100%;
+}
+
+@media only screen and (min-width: 700px) {
+    .calculator-image {
+        width: 50%;
+        height: calc(100svh - 48px);
+        
+        background: var(--primary-100);
+    }
+
+    .calculator {
+        width: 50%;
+    }
 }
