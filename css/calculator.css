@@ -1,28 +1,31 @@
 .calculator-container {
     display: flex;
     padding-top: 48px;
+    
+    overflow: hidden;
 }
 
 .calculator {
-    padding: 48px 16px 16px 16px;
     display: flex;
     position: relative;
     flex-direction: column;
-    gap: 32px;
-    min-height: calc(100svh -48px);
+}
+
+.calculator-content {
+    padding: 98px 16px 116px 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 20px;
 }
 
 .calculator-header {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    padding-bottom: 16px;
 }
 
-.calculator-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
 
 .checkboxes {
     display: flex;
@@ -45,7 +48,7 @@
 
 .pages-header {
     display: flex;
-    width: 100%;
+    
     justify-content: space-between;
 }
 
@@ -72,37 +75,21 @@
 .included {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    position: relative;
     gap: 32px;
-    margin-bottom: auto;
+    
 }
 
-.included-btn {
-    font-size: 12.8px;
-    padding: 8px 12px;
-    border: 1px solid #CCC;
-    border-radius: 28px;
-    cursor: pointer;
-}
-
-.included-btn.active {
-    background: var(--primary);
-    color: var(--text-inverted);
-    border: none;
-}
 
 .included-header {
     display: flex;
     flex-direction: column;
     gap: 32px;
-    overflow: hidden;
+    
+    max-height: 100%;
     transition-duration: var(--animation-slow);
-    padding-bottom: 100px;
-}
+} 
 
-.included-header.active {
-    max-height: 1000px;
-}
 
 .included-header p {
     opacity: 0;
@@ -158,25 +145,26 @@
 @media only screen and (min-width: 700px) {
     .calculator-container {
         gap: 16px;
+        height: 100svh;
     }
+    .calculator {
+        width: 50%;
 
+    }
+    .calculator-content {
+        overflow-y: auto;
+    }
     .calculator-image {
         width: 50%;
-        height: calc(100svh - 48px);
-        
         background: var(--bg-secondary);
     }
 
-    .calculator {
-        width: 50%;
-    }
+    
 }
 
 @media only screen and (min-width: 1300px) {
     .calculator-btns {
-        position: relative;
         width: 100%;
-        margin-top: auto;
+        position: absolute;
     }
-
 }
